@@ -29,7 +29,7 @@ class Customer
     {
         name = a ;
         account_no = b ;
-        balance = 50
+        balance = 50;
     }
 
     void display() 
