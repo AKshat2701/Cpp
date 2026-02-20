@@ -32,6 +32,11 @@ class Customer
         balance = 50;
     }
 
+    inline Customer(string a, int b, int c) : name(a), account_no(b), balance(c)
+    {
+
+    }
+
     void display() 
     {
         cout<< name << " " << account_no << " " << balance << endl;
