@@ -1,47 +1,49 @@
+// A static data member is a class variable that is shared by all objects of the class instead of each object having its own copy.
+// Normally, every object has its own variables.
+// But static members belong to the class itself, not to individual objects.
+
 #include<iostream>
 using namespace std;
 
-class Customer
-{
-    string name ; 
-    int acc_no , balance ;
-    static int total_customer ;
+class Customer {
 
+    string name ;
+    int account_number ;
+    int balance ;
+    
+    
     public:
-    Customer(string name, int acc_no, int balance )
+    static int total_count ;
+
+    Customer(string name , int account_number , int balance)
     {
-        this->name = name;
-        this->acc_no = acc_no;
-        this->balance = balance; 
-        total_customer++;
+        this->name = name ;
+        this->account_number = account_number;
+        this->balance = balance ;
+        total_count++;
     }
 
     void display()
     {
-        cout<< name << " " << acc_no << " " << total_customer << endl;
+        cout<< name << " " << account_number << " " << balance << "\n" << endl;
     }
-    void display_TotalCustomer()
+
+    void count()
     {
-        cout<< total_customer << endl;
+        cout<< total_count; 
     }
 };
 
-int Customer :: total_customer = 0;
 
-int main()
+int Customer :: total_count = 0 ;
+
+
+int main ()
 {
+    Customer c1("Ankit", 1234, 9000);
+    Customer c2("Abhinav", 5678, 9800);
 
-    
-    Customer a1("Rohit", 1, 1000);
-    Customer a2("Mohit", 2, 1800);
+    c2.display();
+    c2.count();
 
-    a1.display();
-    a2.display();
-
-    Customer a3("Mohan", 3 ,3999);
-    a3.display();
-
-    a2.display_TotalCustomer();
-
-    return 0 ;
 }
