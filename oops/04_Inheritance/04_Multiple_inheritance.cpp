@@ -8,6 +8,11 @@ class Engineer
     public:
     string specilization ;
 
+    Engineer()
+    {
+        cout<< "HELLO ENGINEER" <<endl ;
+    }
+
     void work()
     {
         cout<< "I have specilization in " << specilization << endl;
@@ -19,6 +24,10 @@ class Youtuber
     public: 
     int subscriber ;
 
+    Youtuber()
+    {
+        cout<< "HELLO YOUTUBER " << endl;
+    }
 
     void contentCreator()
     {
@@ -32,6 +41,7 @@ class CodeTeacher: public Engineer , public Youtuber
     public :
     string name ;
 
+  
 
     CodeTeacher(string name , string specilization , int subscriber )
     {
