@@ -28,7 +28,42 @@ void merge(int* arr, int start, int end)
         k++ ; 
     }
 
-    
+
+    //merge logic 
+    int leftIndex = 0 ; 
+    int rightIndex = 0 ; 
+    int mainArrayIndex = start ; 
+
+    while(leftIndex < len1 && rightIndex < len2)
+    {
+        if(left[leftIndex] < right[rightIndex])
+        {
+            arr[mainArrayIndex] = left[leftIndex] ; 
+            mainArrayIndex++ ;
+            leftIndex++; 
+        }
+        else 
+        {
+            arr[mainArrayIndex] = right[rightIndex++] ; 
+        }
+    }
+
+    //copy logic for left array 
+    while(leftIndex < len1)
+    {
+        arr[mainArrayIndex] = left[leftIndex];
+        mainArrayIndex++ ;
+        leftIndex++ ; 
+    }
+
+    //copy logic for right array 
+    while(rightIndex < len2)
+    {
+        arr[mainArrayIndex] = right[rightIndex];
+        mainArrayIndex++ ;
+        rightIndex++ ; 
+    }
+
 }
 
 void mergeSort(int* arr, int start, int end)
